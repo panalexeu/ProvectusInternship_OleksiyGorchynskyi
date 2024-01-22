@@ -26,8 +26,6 @@ async def send_prompt(prompt: Prompt):
     open_ai: ChatOpenAI = llm_models['open_ai']
 
     return StreamingResponse(
-        llm_stream_response(
-            open_ai.stream(input=prompt.content)
-        ),
+        llm_stream_response(open_ai.stream(input=prompt.content)),
         media_type='text/event-stream'
     )
