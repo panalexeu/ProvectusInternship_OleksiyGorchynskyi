@@ -1,5 +1,5 @@
-from textwrap import fill
 import requests
+from textwrap import fill
 
 
 def main_loop():
