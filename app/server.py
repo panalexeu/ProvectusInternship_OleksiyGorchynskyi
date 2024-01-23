@@ -5,8 +5,8 @@ from fastapi import FastAPI
 from fastapi.responses import StreamingResponse
 from langchain_openai import ChatOpenAI
 
-from models import Prompt
-from utils import llm_stream_response
+from .models import Prompt
+from .utils import llm_stream_response
 
 llm_models = dict()
 

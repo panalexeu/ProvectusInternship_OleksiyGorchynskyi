@@ -24,4 +24,34 @@ that `LlamaIndex` fits better for data retrieval, while `LangChain` fits better 
 constructed prompts. In the given task my primary objective wasn't to build data retrieval system, but
 to just send prompt and get response from `OpenAI`, that's why my framework of choice was `LangChain`.
 
-## How to run this code
+## How to run the code
+* First, you need to build a Docker image. Make sure you are in the same folder where the Dockerfile is located:
+    ```
+        docker build -t gorch_img .
+    ```
+* Next, run a Docker container using:
+    ```
+        docker run -d --name gorch_cont -p 8000:8000 gorch_img
+    ```
+* To access a script that allows multiline prompt sending, run an interactive shell inside the container:
+    ```
+       docker exec -it gorch_cont bash 
+    ```
+* After that, navigate to the script by typing:
+    ```
+       cd app 
+    ```
+* Run the script using:
+    ```
+       python cli.py
+    ```
+* Follow the instructions provided by the script.
+* To exit the interactive shell, type:
+    ```
+       exit
+    ```
+
+## Script usage example
+Here is an example of script usage:
+
+![Script usage](examples/script_usage.png)
