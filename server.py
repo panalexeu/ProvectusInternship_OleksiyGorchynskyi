@@ -21,7 +21,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(lifespan=lifespan)
 
 
-@app.post('/send-prompt')
+@app.post('/send-prompt', response_class=StreamingResponse)
 async def send_prompt(prompt: Prompt):
     open_ai: ChatOpenAI = llm_models['open_ai']
 
