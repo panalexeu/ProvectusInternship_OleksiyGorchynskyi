@@ -15,7 +15,7 @@ llm_models = dict()
 async def lifespan(app: FastAPI):
     load_dotenv()
 
-    llm_models['open_ai'] = ChatOpenAI()  # Setting ChatOpenAI model before app's startup
+    llm_models['open_ai'] = ChatOpenAI()  # Setting up ChatOpenAI model before app's startup
     yield
 
 app = FastAPI(lifespan=lifespan)
