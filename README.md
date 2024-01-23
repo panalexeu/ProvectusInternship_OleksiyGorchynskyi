@@ -26,28 +26,28 @@ to just send prompt and get response from `OpenAI`, that's why my framework of c
 
 ## How to run the code
 * First, you need to build a Docker image. Make sure you are in the same folder where the Dockerfile is located:
-    ```
+    ```console
         docker build -t gorch_img .
     ```
 * Next, run a Docker container using:
-    ```
+    ```console
         docker run -d --name gorch_cont -p 8000:8000 gorch_img
     ```
 * To access a script that allows multiline prompt sending, run an interactive shell inside the container:
-    ```
+    ```console
        docker exec -it gorch_cont bash 
     ```
 * After that, navigate to the script by typing:
-    ```
+    ```console
        cd app 
     ```
 * Run the script using:
-    ```
+    ```console
        python cli.py
     ```
 * Follow the instructions provided by the script.
 * To exit the interactive shell, type:
-    ```
+    ```console
        exit
     ```
 
